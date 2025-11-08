@@ -796,7 +796,6 @@ namespace DevelopersHub.ClashOfWhatecer
             public int requiredGold = 0;
             public int requiredElixir = 0;
             public int requiredGems = 0;
-            public int requiredDarkElixir = 0;
             public int columns = 0;
             public int rows = 0;
             public int buildTime = 0;

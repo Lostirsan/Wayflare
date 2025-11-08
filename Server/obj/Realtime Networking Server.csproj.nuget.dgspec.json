@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Unity projects\\Hackatons\\-\\Server\\Realtime Networking Server.csproj": {}
+    "C:\\Users\\egoro\\Downloads\\Wayflare\\Server\\Realtime Networking Server.csproj": {}
   },
   "projects": {
-    "C:\\Unity projects\\Hackatons\\-\\Server\\Realtime Networking Server.csproj": {
+    "C:\\Users\\egoro\\Downloads\\Wayflare\\Server\\Realtime Networking Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Unity projects\\Hackatons\\-\\Server\\Realtime Networking Server.csproj",
+        "projectUniqueName": "C:\\Users\\egoro\\Downloads\\Wayflare\\Server\\Realtime Networking Server.csproj",
         "projectName": "Realtime Networking Server",
-        "projectPath": "C:\\Unity projects\\Hackatons\\-\\Server\\Realtime Networking Server.csproj",
-        "packagesPath": "C:\\Users\\klecs\\.nuget\\packages\\",
-        "outputPath": "C:\\Unity projects\\Hackatons\\-\\Server\\obj\\",
+        "projectPath": "C:\\Users\\egoro\\Downloads\\Wayflare\\Server\\Realtime Networking Server.csproj",
+        "packagesPath": "C:\\Users\\egoro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\egoro\\Downloads\\Wayflare\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\klecs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\egoro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

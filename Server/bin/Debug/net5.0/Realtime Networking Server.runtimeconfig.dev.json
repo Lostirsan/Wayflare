@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\klecs\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\klecs\\.nuget\\packages"
+      "C:\\Users\\egoro\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\egoro\\.nuget\\packages"
     ]
   }
 }

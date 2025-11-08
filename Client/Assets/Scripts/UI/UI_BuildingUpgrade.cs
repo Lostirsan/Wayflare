@@ -16,7 +16,6 @@ namespace DevelopersHub.ClashOfWhatecer
         [SerializeField] private Button _closeButton = null;
         [SerializeField] private TextMeshProUGUI reqGold = null;
         [SerializeField] private TextMeshProUGUI reqElixir = null;
-        [SerializeField] private TextMeshProUGUI reqDark = null;
         [SerializeField] private TextMeshProUGUI reqGems = null;
         [SerializeField] private TextMeshProUGUI reqTime = null;
         [SerializeField] private Button _upgradeButton = null;
@@ -46,7 +45,6 @@ namespace DevelopersHub.ClashOfWhatecer
             {
                 reqGold.text = building.requiredGold.ToString();
                 reqElixir.text = building.requiredElixir.ToString();
-                reqDark.text = building.requiredDarkElixir.ToString();
                 reqGems.text = building.requiredGems.ToString();
                 reqTime.text = building.buildTime.ToString();
             }
