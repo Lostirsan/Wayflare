@@ -1,6 +1,7 @@
 using UnityEngine;
 using Mapbox.Utils;
 using Mapbox.Examples;
+using DevelopersHub.ClashOfWhatecer;
 
 public class EventPointer : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class EventPointer : MonoBehaviour
     public Vector2d eventPos;
 
 
-    UI_GPSMap ui;
+    UI_Main ui;
 
     public enum ResourceID
     {
@@ -24,7 +25,7 @@ public class EventPointer : MonoBehaviour
 
     void Start()
     {
-        ui = GameObject.Find("Canvas").GetComponent<UI_GPSMap>();
+        ui = GameObject.Find("Main").GetComponent<UI_Main>();
         Debug.Log(resourseID+ " : "+ ((int) resourseID));
     }
 

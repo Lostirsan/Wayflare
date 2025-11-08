@@ -16,43 +16,31 @@
 		Location currLoc;
 
 		private AbstractLocationProvider _locationProvider = null;
+		bool loaded = false;
 		void Start()
-		{
-			if (null == _locationProvider)
-			{
-				_locationProvider = LocationProviderFactory.Instance.DefaultLocationProvider as AbstractLocationProvider;
-			}
+		{	
 		}
 
 
 		void Update()
 		{
-			currLoc = _locationProvider.CurrentLocation;
-
-			if (currLoc.IsLocationServiceInitializing)
+			if (loaded)
 			{
-				_statusText.text = "location services are initializing";
+				currLoc = _locationProvider.CurrentLocation;
 			}
-			else
-			{
-				if (!currLoc.IsLocationServiceEnabled)
-				{
-					_statusText.text = "location services not enabled";
-				}
-				else
-				{
-					if (currLoc.LatitudeLongitude.Equals(Vector2d.zero))
-					{
-						_statusText.text = "Waiting for location ....";
-					}
-					else
-					{
-						_statusText.text = string.Format("{0}", currLoc.LatitudeLongitude);
-					}
-				}
-			}
-
 		}
+
+		public void load()
+		{
+			if (!loaded)
+			{
+				loaded = true;
+				if (null == _locationProvider)
+				{
+					_locationProvider = LocationProviderFactory.Instance.DefaultLocationProvider as AbstractLocationProvider;
+				}
+			}
+        }
 
 
 		public double GetLocationLat()

@@ -363,6 +363,131 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3118603}
   m_CullTransparentMesh: 1
+--- !u!1 &8030620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8030624}
+  - component: {fileID: 8030623}
+  - component: {fileID: 8030622}
+  - component: {fileID: 8030621}
+  - component: {fileID: 8030625}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &8030621
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030620}
+  m_Enabled: 1
+--- !u!124 &8030622
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030620}
+  m_Enabled: 1
+--- !u!20 &8030623
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030620}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &8030624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030620}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.3644489, y: -0, z: -0, w: 0.9312234}
+  m_LocalPosition: {x: 0, y: 51, z: -32.67}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1166695792}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+--- !u!114 &8030625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9731cbbe25141ab41a73711ca580d944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraOrbitFollow
+  target: {fileID: 843921208}
+  distance: 30
+  minDistance: 20
+  maxDistance: 150
+  zoomSpeed: 6
+  yaw: 0
+  pitch: 20
+  minPitch: 5
+  maxPitch: 60
+  rotateSpeed: 120
+  followSmooth: 10
 --- !u!1 &21959930
 GameObject:
   m_ObjectHideFlags: 0
@@ -4028,7 +4153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -106.390015, y: 362.42303}
+  m_AnchoredPosition: {x: -107.68, y: 116.87}
   m_SizeDelta: {x: 215.36, y: 225.2196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &276338395
@@ -9242,6 +9367,7 @@ GameObject:
   - component: {fileID: 562099345}
   - component: {fileID: 562099343}
   - component: {fileID: 562099342}
+  - component: {fileID: 562099346}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -9321,7 +9447,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 567293084}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &562099345
 MonoBehaviour:
@@ -9342,6 +9468,29 @@ MonoBehaviour:
   _zoomSmooth: 5
   planDownLeft: {x: 0, y: 0, z: 0}
   planTopRight: {x: 0, y: 0, z: 0}
+--- !u!114 &562099346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562099341}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9731cbbe25141ab41a73711ca580d944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraOrbitFollow
+  target: {fileID: 843921208}
+  distance: 16
+  minDistance: 20
+  maxDistance: 150
+  zoomSpeed: 3
+  yaw: 0
+  pitch: 20
+  minPitch: 5
+  maxPitch: 60
+  rotateSpeed: 120
+  followSmooth: 10
 --- !u!1 &567293083
 GameObject:
   m_ObjectHideFlags: 0
@@ -9371,6 +9520,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 562099344}
   - {fileID: 442685710}
   - {fileID: 678654378}
   - {fileID: 1278687489}
@@ -9412,7 +9562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -108.58, y: 120.24}
+  m_AnchoredPosition: {x: -109.87, y: 338.71}
   m_SizeDelta: {x: 210.9843, y: 218.4677}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569268523
@@ -9767,7 +9917,7 @@ GameObject:
   - component: {fileID: 573753859}
   - component: {fileID: 573753858}
   m_Layer: 5
-  m_Name: Button_Battle
+  m_Name: Button_Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18479,6 +18629,7 @@ Transform:
   - {fileID: 1043163162}
   - {fileID: 132193579}
   - {fileID: 794811907}
+  - {fileID: 8030624}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170937533
@@ -19671,7 +19822,7 @@ MonoBehaviour:
   _elixirText: {fileID: 1583895983}
   _gemsText: {fileID: 109432117}
   _shopButton: {fileID: 569268523}
-  _battleButton: {fileID: 573753858}
+  _switchButton: {fileID: 573753858}
   _settingsButton: {fileID: 276338395}
   _usernameText: {fileID: 479126865}
   _trophiesText: {fileID: 1445614179}
@@ -19695,6 +19846,13 @@ MonoBehaviour:
   buttonCollectElixir: {fileID: 8203149641647971460, guid: a7532cdc7f869b6448fc02ac1da84c0b, type: 3}
   buttonCollectDarkElixir: {fileID: 8273664231574953613, guid: 76087b8df3808e347875f45392966dbd, type: 3}
   barBuild: {fileID: 1060327611258696897, guid: 8a50b5bf0870a7544bdf6f944763bcd0, type: 3}
+  game_on: 1
+  gps: {fileID: 1166695791}
+  game: {fileID: 567293083}
+  inRange: {fileID: 632557587}
+  notInRange: {fileID: 2058376513}
+  canva: {fileID: 1329614560}
+  eventManager: {fileID: 1043163161}
 --- !u!1 &1220223447
 GameObject:
   m_ObjectHideFlags: 0
@@ -20627,7 +20785,7 @@ MonoBehaviour:
   _elixirText: {fileID: 352386189}
   _gemsText: {fileID: 649051458}
   _shopButton: {fileID: 1381430957}
-  _battleButton: {fileID: 438460255}
+  _switchButton: {fileID: 0}
   _settingsButton: {fileID: 1920189638}
   _usernameText: {fileID: 1958906245}
   _trophiesText: {fileID: 2070016737}
@@ -20651,6 +20809,13 @@ MonoBehaviour:
   buttonCollectElixir: {fileID: 8203149641647971460, guid: a7532cdc7f869b6448fc02ac1da84c0b, type: 3}
   buttonCollectDarkElixir: {fileID: 8273664231574953613, guid: 76087b8df3808e347875f45392966dbd, type: 3}
   barBuild: {fileID: 1060327611258696897, guid: 8a50b5bf0870a7544bdf6f944763bcd0, type: 3}
+  game_on: 0
+  gps: {fileID: 0}
+  game: {fileID: 0}
+  inRange: {fileID: 0}
+  notInRange: {fileID: 0}
+  canva: {fileID: 0}
+  eventManager: {fileID: 0}
 --- !u!114 &1281290781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21567,6 +21732,7 @@ GameObject:
   - component: {fileID: 1329614558}
   - component: {fileID: 1329614557}
   - component: {fileID: 1329614556}
+  - component: {fileID: 1329614560}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -21657,6 +21823,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1329614560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329614555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57387868ef277924ea4a999647c6db75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Mapbox.Examples.LocationStatus
+  _statusText: {fileID: 0}
 --- !u!1 &1331563786
 GameObject:
   m_ObjectHideFlags: 0
@@ -39806,7 +39985,6 @@ MeshRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 562099344}
   - {fileID: 126941188}
   - {fileID: 1329614559}
   - {fileID: 567293084}

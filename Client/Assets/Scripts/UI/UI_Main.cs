@@ -5,6 +5,7 @@ namespace DevelopersHub.ClashOfWhatecer
     using UnityEngine;
     using TMPro;
     using UnityEngine.UI;
+    using Mapbox.Examples;
 
     public class UI_Main : MonoBehaviour
     {
@@ -14,7 +15,7 @@ namespace DevelopersHub.ClashOfWhatecer
         [SerializeField] public TextMeshProUGUI _elixirText = null;
         [SerializeField] public TextMeshProUGUI _gemsText = null;
         [SerializeField] private Button _shopButton = null;
-        [SerializeField] private Button _battleButton = null;
+        [SerializeField] private Button _switchButton = null;
         [SerializeField] private Button _settingsButton = null;
         [SerializeField] public TextMeshProUGUI _usernameText = null;
         [SerializeField] public TextMeshProUGUI _trophiesText = null;
@@ -29,20 +30,36 @@ namespace DevelopersHub.ClashOfWhatecer
         public UI_Button buttonCollectElixir = null;
         public UI_Button buttonCollectDarkElixir = null;
         public UI_Bar barBuild = null;
+
+
+        [SerializeField] bool game_on = false;
+        [SerializeField] GameObject gps = null;
+        [SerializeField] GameObject game = null;
         private static UI_Main _instance = null; public static UI_Main instanse { get { return _instance; } }
 
-        private bool _active = true;public bool isActive { get { return _active; } }
+        private bool _active = true; public bool isActive { get { return _active; } }
+
+
+        [SerializeField] GameObject inRange;
+        [SerializeField] GameObject notInRange;
+        bool active = false;
+        int tempEvent;
+
+        [SerializeField] LocationStatus canva;
+        [SerializeField] EventManager eventManager;
+
+
 
         private void Awake()
         {
-             _instance = this;
+            _instance = this;
             _elements.SetActive(true);
         }
 
         private void Start()
         {
             _shopButton.onClick.AddListener(ShopButtonClicked);
-            _battleButton.onClick.AddListener(BattleButtonClicked);
+            _switchButton.onClick.AddListener(SwitchButtonClicked);
             _settingsButton.onClick.AddListener(SettingsButtonClicked);
         }
 
@@ -52,7 +69,14 @@ namespace DevelopersHub.ClashOfWhatecer
         }
 
 
-      
+        private void SwitchButtonClicked()
+        {
+            game_on = !game_on;
+            game.SetActive(game_on);
+            gps.SetActive(!game_on);
+            canva.load();
+        }
+
 
         private void ShopButtonClicked()
         {
@@ -89,7 +113,7 @@ namespace DevelopersHub.ClashOfWhatecer
         {
             for (int i = 0; i < _buildingPrefabs.Length; i++)
             {
-                if(_buildingPrefabs[i].id == id)
+                if (_buildingPrefabs[i].id == id)
                 {
                     return _buildingPrefabs[i];
                 }
@@ -159,6 +183,36 @@ namespace DevelopersHub.ClashOfWhatecer
                     building.AdjustUI();
                 }
             }
+        }
+        public void DisplayInRangeEvent(int id)
+        {
+            if (!active)
+            {
+                tempEvent = id;
+                inRange.SetActive(true);
+                active = true;
+            }
+        }
+
+        public void DisplayNotInRange()
+        {
+            if (!active)
+            {
+                notInRange.SetActive(true);
+                active = true;
+            }
+        }
+        
+        public void JoinButtonClick()
+        {
+            eventManager.ActivateEvent(tempEvent);
+        }
+
+        public void CloseButtonClick()
+        {   
+            inRange.SetActive(false);
+            notInRange.SetActive(false);
+            active = false;
         }
 
     }
