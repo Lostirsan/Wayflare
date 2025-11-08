@@ -446,10 +446,6 @@ namespace DevelopersHub.ClashOfWhatecer
             {
                 UI_Train.instanse.Sync();
             }
-            else if (UI_Spell.instanse.isOpen)
-            {
-                UI_Spell.instanse.Sync();
-            }
         }
 
         public void RushSyncRequest()

@@ -192,7 +192,6 @@ namespace DevelopersHub.ClashOfWhatecer
                             else if (results[i].gameObject == UI_BuildingOptions.instanse.spellButton.gameObject)
                             {
                                 //handled = true;
-                                UI_Spell.instanse.SetStatus(true);
                             }
                         }
                         //if (handled)

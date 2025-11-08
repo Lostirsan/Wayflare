@@ -27,7 +27,6 @@ namespace DevelopersHub.ClashOfWhatecer
         [SerializeField] private Button _closeButton = null;
         [SerializeField] private Button _okButton = null;
         [SerializeField] private Button _surrenderButton = null;
-        [SerializeField] private UI_SpellEffect spellEffectPrefab = null;
         [SerializeField] private UI_Projectile projectilePrefab = null;
         private List<BattleUnit> unitsOnGrid = new List<BattleUnit>();
         public List<BuildingOnGrid> buildingsOnGrid = new List<BuildingOnGrid>();
@@ -188,7 +187,6 @@ namespace DevelopersHub.ClashOfWhatecer
             target = defender;
             startbuildings = buildings;
             battleBuildings.Clear();
-            spellEffects.Clear();
 
             for (int i = 0; i < buildings.Count; i++)
             {
@@ -577,28 +575,6 @@ namespace DevelopersHub.ClashOfWhatecer
                                 }
                             }
 
-                            if (toAddSpells.Count > 0)
-                            {
-                                for (int i = toAddSpells.Count - 1; i >= 0; i--)
-                                {
-                                    for (int j = 0; j < Player.instanse.data.spells.Count; j++)
-                                    {
-                                        if (Player.instanse.data.spells[j].databaseID == toAddSpells[i].id)
-                                        {
-                                            Data.Spell spell = Player.instanse.data.spells[j];
-                                            Player.instanse.AssignServerSpell(ref spell);
-                                            battle.AddSpell(spell, toAddSpells[i].x, toAddSpells[i].y, SpellSpawnCallBack, SpellPalseCallBack, SpellEndCallBack);
-                                            Data.BattleFrameSpell bfs = new Data.BattleFrameSpell();
-                                            bfs.id = spell.databaseID;
-                                            bfs.x = toAddSpells[i].x;
-                                            bfs.y = toAddSpells[i].y;
-                                            battleFrame.spells.Add(bfs);
-                                            break;
-                                        }
-                                    }
-                                    toAddSpells.RemoveAt(i);
-                                }
-                            }
 
                             Packet packet = new Packet();
                             packet.Write((int)Player.RequestsID.BATTLEFRAME);
@@ -739,40 +715,7 @@ namespace DevelopersHub.ClashOfWhatecer
             return new Vector2(endW / w * Screen.width, endH / h * Screen.height);
         }
 
-        public List<UI_SpellEffect> spellEffects = new List<UI_SpellEffect>();
-
-        public void SpellSpawnCallBack(long databaseID, Data.SpellID id, Battle.BattleVector2 target, float radius)
-        {
-            Vector3 position = new Vector3(target.x, 0, target.y);
-            position = UI_Main.instanse._grid.transform.TransformPoint(position);
-            UI_SpellEffect effect = Instantiate(spellEffectPrefab, position, Quaternion.identity);
-            effect.Initialize(id, databaseID, radius);
-            spellEffects.Add(effect);
-        }
-
-        public void SpellPalseCallBack(long id)
-        {
-            for (int i = 0; i < spellEffects.Count; i++)
-            {
-                if (spellEffects[i].DatabaseID == battle._spells[i].spell.databaseID)
-                {
-                    spellEffects[i].Pulse();
-                    break;
-                }
-            }
-        }
-
-        public void SpellEndCallBack(long id)
-        {
-            for (int i = 0; i < spellEffects.Count; i++)
-            {
-                if (spellEffects[i].DatabaseID == id)
-                {
-                    spellEffects[i].End();
-                    break;
-                }
-            }
-        }
+  
 
         public void UnitSpawnCallBack(long id)
         {
