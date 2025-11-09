@@ -859,6 +859,7 @@
 "Assets/Scripts/UI/UI_WarMember.cs"
 "Assets/Scripts/UI/UI_WarMemberSelect.cs"
 "Assets/Scripts/UI/UI_WarReportItem.cs"
+"Assets/Scripts/UI_Notification.cs"
 "Assets/Scripts/Unit.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"

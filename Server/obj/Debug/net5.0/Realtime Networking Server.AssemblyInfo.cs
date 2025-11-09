@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Realtime Networking Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+155d628482294d687fadc0351955c6d326f7ed04")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b667488507b82fb06b3a5d5d0aab31c46c5396d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Realtime Networking Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Realtime Networking Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

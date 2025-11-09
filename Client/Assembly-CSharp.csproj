@@ -78,6 +78,7 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\TerrainStrategies\ElevationBasedTerrainStrategy.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\GameObjectModifiers\MaterialModifier.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Scripts\UI_Notification.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Data\FeatureCollectionBase.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\GameObjectModifiers\AddToCollectionModifier.cs" />
     <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\ReverseGeocoderExample.cs" />

@@ -14,6 +14,8 @@ namespace DevelopersHub.ClashOfWhatecer
         private static Player _instance = null; public static Player instanse { get { return _instance; } }
         public Data.InitializationData initializationData = new Data.InitializationData();
         private bool _inBattle = false; public static bool inBattle { get { return instanse._inBattle; } set { instanse._inBattle = value; } }
+        private bool _msgBoxClosing = false;
+
 
         public enum RequestsID
         {
@@ -120,6 +122,21 @@ namespace DevelopersHub.ClashOfWhatecer
                                 break;
                             case 2:
                                 Debug.Log("No resources");
+                                MessageBox.Open(
+                                    0,
+                                    0.8f,
+                                    false,
+                                    (layoutIndex, buttonIndex) =>
+                                    {
+                                        // защита от рекурсии, потому что Close() снова вызовет callback
+                                        if (_msgBoxClosing) return;
+                                        _msgBoxClosing = true;
+                                        MessageBox.Close();
+                                        _msgBoxClosing = false;
+                                    },
+                                    new string[] { "Not enough resources" },
+                                    new string[] { "OK" }
+                                );
                                 break;
                             case 3:
                                 Debug.Log("Max level");
@@ -212,9 +229,40 @@ namespace DevelopersHub.ClashOfWhatecer
                                 break;
                             case 2:
                                 Debug.Log("No resources");
+                                MessageBox.Open(
+                                    0,
+                                    0.8f,
+                                    false,
+                                    (layoutIndex, buttonIndex) =>
+                                    {
+                                        // защита от рекурсии, потому что Close() снова вызовет callback
+                                        if (_msgBoxClosing) return;
+                                        _msgBoxClosing = true;
+                                        MessageBox.Close();
+                                        _msgBoxClosing = false;
+                                    },
+                                    new string[] { "Not enough resources" },
+                                    new string[] { "OK" }
+                                );
                                 break;
                             case 3:
                                 Debug.Log("Max level");
+                                Debug.Log("No resources");
+                                MessageBox.Open(
+                                    0,
+                                    0.8f,
+                                    false,
+                                    (layoutIndex, buttonIndex) =>
+                                    {
+                                        // защита от рекурсии, потому что Close() снова вызовет callback
+                                        if (_msgBoxClosing) return;
+                                        _msgBoxClosing = true;
+                                        MessageBox.Close();
+                                        _msgBoxClosing = false;
+                                    },
+                                    new string[] { "Max already" },
+                                    new string[] { "OK" }
+                                );
                                 break;
                             case 5:
                                 Debug.Log("No builder");
@@ -253,6 +301,21 @@ namespace DevelopersHub.ClashOfWhatecer
                         if (response == 2)
                         {
                             Debug.Log("No resources.");
+                            MessageBox.Open(
+                                    0,
+                                    0.8f,
+                                    false,
+                                    (layoutIndex, buttonIndex) =>
+                                    {
+                                        // защита от рекурсии, потому что Close() снова вызовет callback
+                                        if (_msgBoxClosing) return;
+                                        _msgBoxClosing = true;
+                                        MessageBox.Close();
+                                        _msgBoxClosing = false;
+                                    },
+                                    new string[] { "Not enough resources" },
+                                    new string[] { "OK" }
+                                );
                         }
                         else if (response == 1)
                         {
